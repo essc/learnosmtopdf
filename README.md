@@ -14,27 +14,27 @@ Procedure to convert the LearnOSM markdown files to PDF
 
 Step 1: Replacing Image Path
 ---------------------
-	We're changing it to make the path global in converting PDF
+We're changing it to make the path global in converting PDF
 	
 	`grep -rl $(old) ./ | xargs sed -i -e "s|$(old)|$(new)|g"` 
 
-	- Using grep it will look for files having "$(old)" which is the varibale of "/images/en"
-	- Then, using sed it will change strings from variable "$(old)" to $(new)
+- Using grep it will look for files having "$(old)" which is the varibale of "/images/en"
+- Then, using sed it will change strings from variable "$(old)" to $(new)
 
 Step 2: Removing YAML rules
 ---------------------
-	YAML didn't work during the convertion so we've decided to remove it
+YAML didn't work during the convertion so we've decided to remove it
 
 	`sed  -i "1,7d"`
 
-	- Using sed we were going to remove lines from 1-7 where the YAML is located
+- Using sed we were going to remove lines from 1-7 where the YAML is located
 
 Step 3: Convertion of MArkdon to PDF
 ----------------------
 
 	`$(shell cd $(PATH) && $(PDF_BUILDER) $(PDF_BUILDER_FLAGS) $(SOURCE_FILENAME) -o $(PDF_OUTPUT).pdf)`
 
-	We're going to covert the file using Pandoc. After setting the variable, we're going to call it to make this:
+We're going to covert the file using Pandoc. After setting the variable, we're going to call it to make this:
 
 	`pandoc --latex-engine xelatex --template ../common/pdf-template.tex --listings (all the markdown files) -o samp.pdf`
 
