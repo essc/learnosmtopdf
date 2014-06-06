@@ -112,15 +112,15 @@ $if(graphics)$
 % are scaled down if they would overflow the margins.
 \makeatletter
 \def\ScaleWidthIfNeeded{%
- \ifdim\Gin@nat@width>0.8\linewidth
-    0.75\linewidth
+ \ifdim\Gin@nat@width>0.7\linewidth
+    0.5\linewidth
   \else
     \Gin@nat@width
   \fi
 }
 \def\ScaleHeightIfNeeded{%
-  \ifdim\Gin@nat@height>0.8\textheight
-    0.75\textheight
+  \ifdim\Gin@nat@height>0.7\textheight
+    0.5\textheight
   \else
     \Gin@nat@width
   \fi
