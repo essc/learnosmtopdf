@@ -2,8 +2,8 @@ Procedure to convert the LearnOSM markdown files to PDF
 =================
 
 1. Install pandoc, haskell and latex dependencies.
-2. Clone this repository: https://github.com/essc/lernosmtopdf 
-3. Clone the leaornOSM repo: http://github.com/hotosm/learnosm
+2. Clone this repository: https://github.com/essc/learnosmtopdf 
+3. Clone the leaornOSM repo: https://github.com/hotosm/learnosm
 4. Create a  directory folder and copy the markdown files you want rendered.
 5. Copy the `images` directory from the learnosm repor to the directory your just created.
 6. Edit the `Makefile`:
